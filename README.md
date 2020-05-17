@@ -30,10 +30,10 @@ How to train the network?<br/>
 2) Run $cd yolo_pytorch <br/>
 3) Run $python train.py <br/>
 4) It will save weights in .pth file<br/>
-5) There will be several .pth files, just choose the recent now. Training is still going, so I am not sure which .pth file will have minimal loss.
+5) There will be several .pth files, just choose the most recent one. Training is still going, so I am not sure which .pth file will have minimal loss.
 
 How to detect pictures in test set?<br/>
-1) As I mentioned above, lease download all the files from the google drive by the first link on the top of the Readme <br/>
+1) As I mentioned above, please download all the files from the google drive by the first link on the top of the Readme <br/>
 2) Run $cd yolo_pytorch <br/>
 3) In detect.py specify which weight file (.pth) you want to load.<br/>
 4) Run $python detect.py <br/>
