@@ -21,7 +21,7 @@ Run $sudo pip3 install -r requirements.txt<br/>
 In order to meet all requirements<br/>
 
 What each .py file do:<br/>
-1)train.py -> trains the network for about 100 epochs. every 20 epochs saves the network weights.<br/>
+1)train.py -> trains the network for about 100 epochs.<br/>
 2)test.py -> is used to do testing on a validation set. <br/>
 3)detect.py -> is used to do predictions on a test set<br/>
 
