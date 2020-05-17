@@ -6,7 +6,7 @@ All the file can be found here: https://drive.google.com/open?id=1Y6vVI9YfqX-7Re
 Test data: https://drive.google.com/drive/folders/1fQ2xkaZxEPY3ZNjcAE3zFLsegoCfolom <br/>
 Test data with bounding boxes: https://drive.google.com/drive/folders/1fU2_YEWLFHmFbJKHzUzeg38TGal0LUJU <br/>
 Training data: https://drive.google.com/drive/folders/1-L_OliRDtxtL_7qGjkGTK6_P4ZpraeTJ <br/>
-Bounding Boxes predictions have been made on a network that have been trained with only 20 epochs. I am training it now on 100 epochs, and when it will finish I will update bounding boxes.<br/>
+Note: Bounding Boxes predictions have been made on a network that have been trained with only 20 epochs. I am training it now on 100 epochs, and when it will finish I will update bounding boxes.<br/>
 
 Main functions and architectures were taken from https://github.com/eriklindernoren/PyTorch-YOLOv3
 
