@@ -1,6 +1,6 @@
 # Facial Emotion Recognition
 
-To complete this task I used YOLOv3 tiny architecture in PyTorch. 
+To complete this task I used YOLOv3 tiny architecture in PyTorch. Training data, test data, and test data with bounding boxes can be found in this google drive file: https://drive.google.com/open?id=1Y6vVI9YfqX-7RebCCZy9xOHQB3yhaDZy  <br/>
 
 Main functions and architectures were taken from https://github.com/eriklindernoren/PyTorch-YOLOv3
 
@@ -19,3 +19,11 @@ What each .py file do:<br/>
 2)test.py -> is used to do testing on a validation set. <br/>
 3)detect.py -> is used to do predictions on a test set<br/>
 
+How to train the network?<br/>
+Run $python train.py <br/>
+It will save weights in small.pth<br/>
+
+How to detect pictures in test set?<br/>
+Run $python test.py<br/>
+It will automitcally load weights (small.pth file) that have been saved during training.<br/>
+Furthermore, it will save picture with a bounding boxes in /data/outcome/<br/>
