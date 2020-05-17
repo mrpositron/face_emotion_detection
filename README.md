@@ -13,7 +13,7 @@ test.py, train.py and detect.py were simplified and decreased in the content fro
 Furthermore, slight changes in utils/datasets.py have been made.
 
 Data have been pre-processed to meet our requirements.
-You can find data file by opening this link:
+You can find training data and its structure from the link above.
 
 All files have been compiled with PyTorch 1.1.0, Torchvision 0.3.0, Pillow 6.1.0.<br/>
 Run $sudo pip3 install -r requirements.txt<br/>
