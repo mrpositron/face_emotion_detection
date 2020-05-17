@@ -26,11 +26,17 @@ What each .py file do:<br/>
 3)detect.py -> is used to do predictions on a test set<br/>
 
 How to train the network?<br/>
-Run $python train.py <br/>
-It will save weights in .pth file<br/>
-There will be several .pth files, just choose the recent now. Training is still going, so I am not sure which .pth file will have minimal loss.
+1) First of all, please download all the files from the google drive by the first link on the top of the Readme <br/>
+2) Run $cd yolo_pytorch <br/>
+3) Run $python train.py <br/>
+4) It will save weights in .pth file<br/>
+5) There will be several .pth files, just choose the recent now. Training is still going, so I am not sure which .pth file will have minimal loss.
 
 How to detect pictures in test set?<br/>
-Run $python test.py<br/>
-In a test.py specify which weight file (.pth) you want to load.<br/>
-Furthermore, it will save picture with a bounding boxes in /data/outcome/<br/>
+1) As I mentioned above, lease download all the files from the google drive by the first link on the top of the Readme <br/>
+2) Run $cd yolo_pytorch <br/>
+3) In detect.py specify which weight file (.pth) you want to load.<br/>
+4) Run $python detect.py <br/>
+5) It will save picture with a bounding boxes in yolo_pytorch/data/outcome/<br/>
+
+Feel free to contact me at 35646knk {at} gmail {dot} com
