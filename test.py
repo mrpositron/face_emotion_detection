@@ -52,41 +52,41 @@ def evaluate(model, path, iou_thres, conf_thres, nms_thres, img_size, batch_size
 
     return precision, recall, AP, f1, ap_class
 
-def test():
-    model_def = "config/yolov3-tiny.cfg"
-    data_config = "config/custom.data"
-    pretrained_weights = None
-    iou_thres = 0.5
-    conf_thres = 0.001
-    nms_thres = 0.5
-    img_size = 416
+if __name__ == "__main__":
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--batch_size", type=int, default=8, help="size of each image batch")
+    parser.add_argument("--model_def", type=str, default="config/yolov3-tiny.cfg", help="path to model definition file")
+    parser.add_argument("--data_config", type=str, default="config/custom.data", help="path to data config file")
+    parser.add_argument("--weights_path", type=str, default="small.pth", help="path to weights file")
+    parser.add_argument("--iou_thres", type=float, default=0.5, help="iou threshold required to qualify as detected")
+    parser.add_argument("--conf_thres", type=float, default=0.001, help="object confidence threshold")
+    parser.add_argument("--nms_thres", type=float, default=0.5, help="iou thresshold for non-maximum suppression")
+    parser.add_argument("--img_size", type=int, default=416, help="size of each image dimension")
+    opt = parser.parse_args()
+
+
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    data_config = parse_data_config(data_config)
+    data_config = parse_data_config(opt.data_config)
     valid_path = data_config["valid"]
     class_names = load_classes(data_config["names"])
 
-    print(valid_path)
-    print(class_names)
 
-
-    model = Darknet(model_def).to(device)
-    model.load_state_dict(torch.load('small.pth'))
+    model = Darknet(opt.model_def).to(device)
+    model.load_state_dict(torch.load(opt.weights_path))
     print("Compute mAP...")
     precision, recall, AP, f1, ap_class = evaluate(
         model,
         path=valid_path,
-        iou_thres=iou_thres,
-        conf_thres=conf_thres,
-        nms_thres=nms_thres,
-        img_size=img_size,
-        batch_size=1,
+        iou_thres=opt.iou_thres,
+        conf_thres=opt.conf_thres,
+        nms_thres=opt.nms_thres,
+        img_size=opt.img_size,
+        batch_size=opt.batch_size,
     )
     print("Average Precisions:")
     for i, c in enumerate(ap_class):
         print(f"+ Class '{c}' ({class_names[c]}) - AP: {AP[i]}")
 
     print(f"mAP: {AP.mean()}")
-
-
-test()

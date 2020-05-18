@@ -10,41 +10,37 @@ from utils.utils import *
 from utils.datasets import *
 from utils.parse_config import *
 
+import argparse
 
-def train():
+if __name__ == "__main__":
     torch.cuda.empty_cache()
 
-    epochs = 100
-    batch_size = 8
-    model_def = "config/yolov3-tiny.cfg"
-    data_config = "config/custom.data"
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--epochs", type=int, default=100, help="number of epochs")
+    parser.add_argument("--batch_size", type=int, default=8, help="size of each image batch")
+    parser.add_argument("--model_def", type=str, default="config/yolov3-tiny.cfg", help="path to model definition file")
+    parser.add_argument("--data_config", type=str, default="config/custom.data", help="path to data config file")
+    opt = parser.parse_args()
     pretrained_weights = None
 
     img_size = 416
-    if torch.cuda.is_available():
-        dev = "cuda"
-    else:
-        dev = "cpu"
-    device = torch.device(dev)
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     # Get data configuration
-    data_config = parse_data_config(data_config)
+    data_config = parse_data_config(opt.data_config)
     train_path = data_config["train"]
     valid_path = data_config["valid"]
     class_names = load_classes(data_config["names"])
 
-    print(train_path)
-    print(valid_path)
-    print(class_names)
     # Initiate model
-    model = Darknet(model_def).to(device)
+    model = Darknet(opt.model_def).to(device)
     model.apply(weights_init_normal)
 
     # Get dataloader
     dataset = ListDataset(train_path, augment=True)
 
     dataloader = torch.utils.data.DataLoader(dataset, 
-            batch_size=batch_size, 
+            batch_size=opt.batch_size, 
             shuffle=True,
             collate_fn=dataset.collate_fn
     )
@@ -53,7 +49,7 @@ def train():
 
     b = len(dataloader)
     min_loss = 1000000
-    for epoch in range(epochs):
+    for epoch in range(opt.epochs):
         model.train()
         print(epoch)
         total_loss = 0
@@ -66,10 +62,10 @@ def train():
             optimizer.step()
             optimizer.zero_grad()
         ls = total_loss/b
-        if ((ls < min_loss) and (epoch % 20 == 0) and (epoch > 20)):
+        # checkpoints 
+        if ((ls < min_loss) and (epoch % 10 == 0) and (epoch > 15)):
             min_loss = ls
-            torch.save(model.state_dict(), "small" + str(int(ls)) +".pth")
-
-    
-
-train()
+            file = open("epoch_" + str(epoch) + "_loss.txt","r+")
+            file.write(str(min_loss))
+            file.close() 
+            torch.save(model.state_dict(), "epoch_" + str(epoch) +".pth")
