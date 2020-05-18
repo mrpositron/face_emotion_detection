@@ -1,7 +1,7 @@
 # Facial Emotion Recognition
 
 To complete this task I used YOLOv3 tiny architecture in PyTorch. <br/>
-### I used colab to run python scripts using GPU
+### Note: I used colab to run python scripts using GPU
 
 All files can be found here: https://drive.google.com/open?id=1Y6vVI9YfqX-7RebCCZy9xOHQB3yhaDZy <br/>
 Test data: https://drive.google.com/drive/folders/1fQ2xkaZxEPY3ZNjcAE3zFLsegoCfolom <br/>
