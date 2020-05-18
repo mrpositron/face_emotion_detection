@@ -19,7 +19,7 @@ All files have been compiled with PyTorch 1.1.0, Torchvision 0.3.0, Pillow 6.1.0
 Run $sudo pip3 install -r requirements.txt<br/>
 In order to meet all requirements<br/>
 
-What each .py file do:<br/>
+## What each .py file do:<br/>
 1)train.py -> trains the network.<br/>
 2)test.py -> is used to do testing on a validation set. <br/>
 3)detect.py -> is used to do predictions on a test set<br/>
