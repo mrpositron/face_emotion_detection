@@ -32,10 +32,10 @@ In order to meet all requirements<br/>
 1) As I mentioned above, please download all the files from the google drive by the first link on the top of the Readme <br/>
 2) Run $cd yolo_pytorch <br/>
 3) Run $python detect.py [--image_folder IMAGE_FOLDER] [--model_def MODEL_DEF] [--weights_path WEIGHTS_PATH] [--class_path CLASS_PATH] [--conf_thres CONF_THRES] [--nms_thres NMS_THRES] [--batch_size BATCH_SIZE] [--img_size IMG_SIZE] <br/>
-Note: in [--weights_path WEIGHTS_PATH], please write the recent the path of recent .pth file. If not, network trained with 60 epochs (small.pth) will be used<br/>
+Note: in [--weights_path WEIGHTS_PATH], please write the recent path of recent .pth file. If not, network trained with 60 epochs (small.pth) will be used<br/>
 4) It will save picture with a bounding boxes in yolo_pytorch/data/outcome/<br/>
 
 ![alt text](https://github.com/MrPositron/face_emotion_detection/blob/master/young-beautiful-chinese-woman-talking-260nw-1505387699.png) <br/>
-Face detection and emotion classification on an image from the test data ,br/>
+Face detection and emotion classification on an image from the test data <br/>
 
 Feel free to contact me at 35646knk {at} gmail {dot} com
