@@ -38,4 +38,7 @@ In order to meet all requirements<br/>
 Note: in [--weights_path WEIGHTS_PATH], please write the recent the path of recent .pth file. If not, network trained with 60 epochs (small.pth) will be used<br/>
 4) It will save picture with a bounding boxes in yolo_pytorch/data/outcome/<br/>
 
+![alt text](https://github.com/MrPositron/face_emotion_detection/blob/master/young-beautiful-chinese-woman-talking-260nw-1505387699.png) <br/>
+Face detection and emotion classification on an image from the test data ,br/>
+
 Feel free to contact me at 35646knk {at} gmail {dot} com
