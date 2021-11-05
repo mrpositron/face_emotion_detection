@@ -38,5 +38,3 @@ Note: in [--weights_path WEIGHTS_PATH], please write the recent path of recent .
 
 ![alt text](https://github.com/MrPositron/face_emotion_detection/blob/master/young-beautiful-chinese-woman-talking-260nw-1505387699.png) <br/>
 Face detection and emotion classification on an image from the test data <br/>
-
-Feel free to contact me at 35646knk {at} gmail {dot} com
