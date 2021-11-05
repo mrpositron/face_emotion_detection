@@ -1,6 +1,7 @@
-# Facial Emotion Recognition
+# Facial Emotion Detection and Recognition
 
-To complete this task I used YOLOv3 tiny architecture in PyTorch. <br/>
+Facial Emotion Detection and Recognition using YOLOv3 tiny architecture in PyTorch. <br/>
+
 ### Note: I used colab to run python scripts with GPU
 
 All files can be found here: https://drive.google.com/open?id=1Y6vVI9YfqX-7RebCCZy9xOHQB3yhaDZy <br/>
@@ -13,7 +14,6 @@ Main functions and architectures were taken from https://github.com/eriklinderno
 test.py, train.py and detect.py were simplified and decreased in the content from the github repo defined above and adapted to our task.
 Furthermore, slight changes in utils/datasets.py have been made. Data have been pre-processed to meet our requirements. You can find training data and its structure from the link above.
 
-All files have been compiled with PyTorch 1.1.0, Torchvision 0.3.0, Pillow 6.1.0.<br/>
 Run $sudo pip3 install -r requirements.txt<br/>
 In order to meet all requirements<br/>
 
